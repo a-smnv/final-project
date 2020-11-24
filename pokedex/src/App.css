@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+  color:white;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background:#330867;
+  color:white;
+}
+.nav-links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+button[disabled]{
+  opacity: 50%;
+}
+
+.cards{
+  border: solid;
+  border-color: #6b22c9;
+
+}
+.btn{
+  background: #6b22c9;
+  color: white
+}
