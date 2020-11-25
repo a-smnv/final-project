@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import HomePage from "./HomePage";
 import axios from "axios";
+import moment from "moment";
 
 const catchIt = async (id, name) => {
   const url = "http://localhost:3004/pokemons/" + id;
   const data = {
     id,
     name,
-    catchedAt: new Date(),
+    catchedAt: moment().format("DD.MM.YYYY HH:mm:ss"),
   };
 
   axios.patch(url, data).then((data) => data);
@@ -30,7 +31,7 @@ export default function PokemonCard({ id, name, catchedAt }) {
       <div className="card-body">
         <h2>{name}</h2>
         {catchedAt && match ? (
-          <h3> You cought me : {catchedAt} </h3>
+          <h3> You cought me: {catchedAt} </h3>
         ) : (
           <button
             className="btn"
