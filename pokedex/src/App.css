@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  color:white;
+  color: white;
   min-height: 100vh;
 }
 
@@ -9,26 +9,25 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background:#330867;
-  color:white;
+  background: #330867;
+  color: white;
 }
-.nav-links{
+.nav-links {
   width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
 }
-button[disabled]{
+button[disabled] {
   opacity: 50%;
 }
 
-.cards{
+.cards {
   border: solid;
   border-color: #6b22c9;
-
 }
-.btn{
+.btn {
   background: #6b22c9;
-  color: white
+  color: white;
 }

@@ -18,25 +18,22 @@ function HomePage() {
 
     const response = await data.json();
     setCards(response);
-
-
   };
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  console.log(currentCards);
+
   return (
     <div>
-      <div className = "d-flex flex-wrap w-100 justify-content-center" id="main">
+      <div className="d-flex flex-wrap w-100 justify-content-center">
         {currentCards.map((i) => (
-          <div key = {i.id} className = "p-2 bd-highlight">
+          <div key={i.id} className="p-2 bd-highlight">
             <PokemonCard
-              id={i.id}
-              name ={i.name}
-
-            />
+             id={i.id}
+             name={i.name}
+             catchedAt={i.catchedAt} />
           </div>
         ))}
       </div>

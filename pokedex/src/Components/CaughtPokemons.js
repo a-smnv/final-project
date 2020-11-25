@@ -1,38 +1,35 @@
-import React,{useEffect,useState} from "react";
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 
-
 function CaughtPokemons() {
+  const [coPokes, setCoPokes] = useState([]);
 
-  const[coPokes,setCoPokes] = useState([]);
-
-  useEffect(()=>{
+  useEffect(() => {
     getCoPokes();
-  } , [])
+  }, []);
 
-const getCoPokes = async () => {
-  const data = await fetch("http://localhost:3004/pokemons");
+  const getCoPokes = async () => {
+    const data = await fetch("http://localhost:3004/pokemons");
 
-  const response = await data.json();
-  setCoPokes(response);
-}
+    const response = await data.json();
+    setCoPokes(response);
+  };
   return (
-
-    <div className = "d-flex flex-wrap w-100 justify-content-center">
-    {coPokes.filter(e => e.catchedAt !== undefined).map(pokemon => (
-
-    <div  key={pokemon.id}><PokemonCard
+    <div className="d-flex flex-wrap w-100 justify-content-center">
+      {coPokes
+        .filter((e) => e.catchedAt !== undefined)
+        .map((pokemon) => (
+          <div key={pokemon.id}>
+            <PokemonCard
               id={pokemon.id}
               name={pokemon.name}
               catchedAt={pokemon.catchedAt}
-            /> </div>
-    ))}
-
+            />{" "}
+          </div>
+        ))}
     </div>
   );
 }
-
-
 
 export default CaughtPokemons;
