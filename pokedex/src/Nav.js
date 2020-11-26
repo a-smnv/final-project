@@ -1,21 +1,28 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import "./App.css";
 
 function Nav() {
 const navStyle = {
+  fontSize:"30px",
+  fontWeight: "bold",
   color:"white"
 };
 
   return (
     <nav >
-    <h3>PokedeX</h3>
+    <img className="logo"
+      src={"/logo.png"}
+      alt="Pokedex"
+
+    />
 
       <ul className="nav-links">
-        <Link style ={navStyle} to="/caught">
-          <li>Caught Pokemons </li>
+        <Link className ="nav-link active" style ={navStyle} to="/caught">
+          <li className = "liStyle">Caught Pokemons </li>
         </Link>
-        <Link style ={navStyle} to="/">
-          <li>Home page</li>
+        <Link className ="nav-link active" id="home-tab" style ={navStyle} to="/">
+          <li className = "liStyle">Home page</li>
         </Link>
       </ul>
     </nav>

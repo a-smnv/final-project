@@ -1,5 +1,6 @@
 body {
   margin: 0;
   height: 100%;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background:#ffce31;
+  /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
 };
